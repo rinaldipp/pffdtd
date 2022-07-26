@@ -66,7 +66,7 @@ class VoxGrid(VoxGridBase):
 
         if Nh is None and Nvox_est is None: #heuristic, but seems ok
             fac = 0.025 
-            Nvox_est = iceil(fac*np.sqrt(Ntris * np.prod(Nxyz)))
+            Nvox_est = iceil(fac*np.sqrt(np.multiply(Ntris, np.prod(Nxyz), dtype="int64")))
 
         #calculate Nh if estimate given
         if Nvox_est is not None:
